@@ -1,0 +1,48 @@
+ex1)
+.open naverDB : 데이터베이스가 있다면 열어주고, 없으면 새로 생성. 
+
+참고.
+.table : 현재 데이터베이스의 테이블 목록 보여주기.
+.schema 테이블이름 : 테이블의 열 및 데이터 형식 등 정보를 보여줌. 
+.header on : SELECT 문으로 출력할 때 헤더를 보여준다. 
+.mode column : SELECT 문으로 출력할 때 컬럼모드로 출력한다. 
+.quit : SQLite 를 종료함.
+
+ex2)
+create table userTable(id char(4), userName char(15), email char(15), birthYear int);
+.table 
+.schema userTable
+
+ex3)
+drop table userTable;
+
+ex4)
+insert into userTable values('lsy1','sang1','lsy1@naver.com', 1991);
+insert into userTable values('lsy2','sang2','lsy2@naver.com', 1992);
+insert into userTable values('lsy3','sang3','lsy3@naver.com', 1993);
+insert into userTable values('lsy4','sang4','lsy4@naver.com', 1994);
+
+ex5)
+delete from userTable where id = 'lsy1';
+
+ex6)
+update userTable set userName = 'sang23' where id = 'lsy2';
+
+ex7)
+select * from userTable;
+
+ex8)
+.header on 
+.mode column
+select * from userTable;
+
+ex9)
+select id, birthYear from userTable where birthYear <=1999;
+
+select * from userTable where id = 'park';
+
+select * from userTable order by birthYear;
+
+select * from userTable order by birthYear desc;
+
+.quit

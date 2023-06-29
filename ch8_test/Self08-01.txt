@@ -1,0 +1,8 @@
+.open naverDB
+CREATE TABLE productTable(pCode char(5), pName char(15), price int, amount int);
+INSERT INTO productTable VALUES('p0001', '상품1', 110, 5);
+INSERT INTO productTable VALUES('p0002', '상품2', 3, 22);
+INSERT INTO productTable VALUES('p0003', '상품3', 2, 11);
+.heder on
+.mode column
+SELECT * FROM productTable;
